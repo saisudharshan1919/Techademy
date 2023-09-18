@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "ec53c972-74fd-43f4-8873-5791bd47d020",
+		"name": "Positive",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29774356",
+		"_collection_link": "https://www.postman.com/maintenance-geologist-67901152/workspace/techademy/collection/29774356-ec53c972-74fd-43f4-8873-5791bd47d020?action=share&source=collection_link&creator=29774356"
+	},
+	"item": [
+		{
+			"name": "All Id`s",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\",function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"page\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"per_page\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"total\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"total_pages\");\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/login",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Equality\", function(){\r",
+							"let i = {\r",
+							"\t\"id\" : \"1\"\r",
+							"};\r",
+							"let j= {\r",
+							"\t\"id\" : \"5\"\r",
+							"};\r",
+							"pm.expect(i).to.not.eql(j);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"id\": 1,\r\n      \"name\": \"cerulean\",\r\n      \"year\": 2000,\r\n      \"color\": \"#98B2D1\",\r\n      \"pantone_value\": \"15-4020\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/login",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Expected aqua sky at Data[4].name\",function(){\r",
+							"    var jsonData= pm.response.json();\r",
+							"    pm.expect(jsonData.data[4].name).to.eql(\"aqua sky\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/login",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
